@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: algorecall-api
+  jackson:
+    parser:
+      allow-unquoted-control-chars: true
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/algorecall_db}
+  ai:
+    google:
+      genai:
+        api-key: ${GOOGLE_API_KEY:YOUR_GEMINI_API_KEY}
+        project-id: ${GOOGLE_PROJECT_ID:YOUR_PROJECT_ID}
+        chat:
+          options:
+            model: gemini-2.5-flash
+        embedding:
+          api-key: ${GOOGLE_API_KEY:YOUR_GEMINI_API_KEY}
+          vertex-ai: false
+          project-id: ${GOOGLE_PROJECT_ID:YOUR_PROJECT_ID}
+          options:
+            model: text-embedding-004
+    vectorstore:
+      qdrant:
+        api-key: ${QDRANT_API_KEY:YOUR_QDRANT_API_KEY}
+        use-tls: true
+        host: ${QDRANT_HOST:localhost}
+        port: ${QDRANT_PORT:6334}
+        collection-name: ${QDRANT_COLLECTION_NAME:documents}
+        initialize-schema: true
+
+jwt:
+  secret: ${JWT_SECRET:algorecall_secure_jwt_secret_key_2026_spring_boot_application_token_long_key_for_security}
+  expiration: 86400000 # 24 hours in milliseconds
