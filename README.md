@@ -358,5 +358,4 @@ Perform a semantic search on Qdrant Cloud over your uploaded context, and get a 
 2. **IDE Plugins**: Direct submit plugins for VS Code and IntelliJ IDEA.
 3. **LeetCode Integration (Browser Extension)**: Develop a browser extension/plugin that allows users to submit their LeetCode solutions directly to the application, linking LeetCode attempts to their personal mentoring journal automatically.
 4. **Batch Log Export**: PDF/Markdown export of mistake histories for offline interview prep.
-# AlgoRecallAi
-# AlgoRecallAi
+
